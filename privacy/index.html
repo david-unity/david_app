@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Privacy Policy — David App</title>
+  <style>
+    :root{
+      --bg: #ffffff;
+      --surface: #f7f8fa;
+      --text: #0b1220;
+      --muted: #50575f;
+      --accent: #007aff; /* iOS system blue */
+      --card: #ffffff;
+      --radius: 12px;
+      --maxw: 900px;
+      --line: 1.6;
+      --shadow: 0 6px 18px rgba(12,20,30,0.06);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    html,body{height:100%;background:var(--bg);color:var(--text);margin:0;}
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    .app {
+      min-height:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:24px 18px;
+      box-sizing:border-box;
+    }
+    .nav {
+      width:100%;
+      max-width:var(--maxw);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(247,248,250,0.8));
+      border-radius:14px;
+      box-shadow:var(--shadow);
+      margin-bottom:20px;
+      box-sizing:border-box;
+    }
+    .brand {
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .logo {
+      width:36px;height:36px;border-radius:9px;
+      background:linear-gradient(135deg,var(--accent),#5ac8fa);
+      display:flex;align-items:center;justify-content:center;
+      color:white;font-weight:700;font-size:18px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    }
+    .nav .links {
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    .seg {
+      display:inline-flex;
+      background:transparent;
+      border-radius:10px;
+      padding:4px;
+      gap:6px;
+      box-sizing:border-box;
+    }
+    .seg a {
+      padding:8px 12px;
+      border-radius:8px;
+      color:var(--muted);
+      font-weight:600;
+      font-size:14px;
+      border:1px solid transparent;
+      background:transparent;
+    }
+    .seg a[aria-current="page"]{
+      background:var(--card);
+      color:var(--text);
+      border-color:rgba(11,18,32,0.06);
+      box-shadow:0 4px 12px rgba(12,20,30,0.04);
+    }
+    main {
+      width:100%;
+      max-width:var(--maxw);
+      background:var(--card);
+      border-radius:14px;
+      padding:22px;
+      box-shadow:var(--shadow);
+      box-sizing:border-box;
+      margin-bottom:20px;
+    }
+    h1{margin:0 0 6px 0;font-size:20px}
+    .muted { color:var(--muted); font-size:14px; margin-bottom:18px; }
+    section{margin:18px 0;}
+    h2{font-size:16px;margin:0 0 8px 0}
+    p{margin:0 0 12px 0;line-height:var(--line); color:var(--muted)}
+    ul{margin:0 0 12px 20px;color:var(--muted)}
+    footer {
+      width:100%;
+      max-width:var(--maxw);
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+      padding:12px 6px;
+    }
+
+    /* Responsive */
+    @media (max-width:640px){
+      .nav{padding:12px}
+      .seg a{padding:9px 10px;font-size:13px}
+      main{padding:18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="app" role="document">
+    <header class="nav" role="navigation" aria-label="Top navigation">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">D</div>
+        <div>
+          <div style="font-weight:700;color:var(--text);">David App</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px;">Privacy & Legal</div>
+        </div>
+      </div>
+
+      <nav class="links" aria-label="Legal navigation">
+        <div class="seg" role="tablist">
+          <a href="/david_app/privacy" aria-current="page">Privacy Policy</a>
+          <a href="/david_app/terms">Terms of Service</a>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main" aria-labelledby="privacy-title">
+      <h1 id="privacy-title">Privacy Policy</h1>
+      <div class="muted">Effective date: August 25, 2026 — Last updated: August 25, 2026</div>
+
+      <section>
+        <h2>Our commitment to your privacy</h2>
+        <p>We take your privacy and the security of your data seriously. This Privacy Policy explains what data the David App collects, why we collect it, how it is used, and your choices. We design features to minimize personal data collection and protect what is necessary to operate the app.</p>
+      </section>
+
+      <section>
+        <h2>Data we collect</h2>
+        <p>We may collect the following categories of information, depending on app features you use:</p>
+        <ul>
+          <li><strong>Personal information:</strong> email address, display name, or contact details you provide when contacting support.</li>
+          <li><strong>Usage & analytics:</strong> anonymous usage data (crash reports, diagnostics, feature usage) to improve stability and experience.</li>
+          <li><strong>Device & technical data:</strong> device model, OS version, app version, and unique device identifiers for debugging and analytics.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Device permissions</h2>
+        <p>The app only requests permissions that are necessary for features you choose to use. Examples include:</p>
+        <ul>
+          <li><strong>Camera / Photos:</strong> requested only for optional features that let you take or select images. Images remain on your device unless you explicitly upload or share them.</li>
+          <li><strong>Microphone:</strong> requested only if a feature requires voice input; recordings are not collected without your consent.</li>
+          <li><strong>Location:</strong> requested only for location-specific features and only while using the feature (if applicable).</li>
+          <li><strong>Notifications:</strong> used to deliver opt-in alerts; you may disable them anytime in iOS Settings.</li>
+        </ul>
+        <p>If you deny a permission the related functionality will be disabled, and you can change permissions in iOS Settings for the app.</p>
+      </section>
+
+      <section>
+        <h2>Third-party services and sharing</h2>
+        <p>We may share limited data with trusted third parties to provide services, such as analytics and crash reporting. These providers process data according to their own policies and only to help operate and improve the app. Examples of categories of third parties:</p>
+        <ul>
+          <li>Crash reporting and analytics providers (to help diagnose issues).</li>
+          <li>Hosting providers for server-side features (when applicable).</li>
+        </ul>
+        <p>We do not sell your personal information to advertisers. Any sharing is minimal, controlled, and necessary for the services above.</p>
+      </section>
+
+      <section>
+        <h2>Data retention and deletion</h2>
+        <p>We retain data only as long as necessary to provide the app and comply with legal obligations. If you’d like your data deleted, please contact us (see Contact Information). Upon request we will remove your personal data from our systems within a reasonable timeframe, subject to legal or technical constraints.</p>
+      </section>
+
+      <section>
+        <h2>Security</h2>
+        <p>We use administrative, technical, and physical safeguards appropriate to the sensitivity of the data. This includes encryption for data in transit (TLS) and access controls. While we strive to protect your information, no system is 100% secure—if you suspect a security issue, contact us immediately.</p>
+      </section>
+
+      <section>
+        <h2>Children</h2>
+        <p>The David App is not intended for children under the age of 13. If you are a parent and believe your child provided personal information, please contact us so we can take appropriate steps.</p>
+      </section>
+
+      <section>
+        <h2>Changes to this policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will post the updated policy here with a revised effective date. Significant changes will be communicated where feasible.</p>
+      </section>
+
+      <section>
+        <h2>Contact information</h2>
+        <p>If you have questions or requests about your data (access, correction, deletion), please reach out:</p>
+        <p><a href="mailto:privacy@david-unity.dev">privacy@david-unity.dev</a></p>
+      </section>
+    </main>
+
+    <footer>
+      Created with ❤️ by David — Independent iOS Developer. Feedback is always welcome!
+    </footer>
+  </div>
+</body>
+</html>
