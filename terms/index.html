@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Terms of Service — David App</title>
+  <style>
+    :root{
+      --bg: #ffffff;
+      --surface: #f7f8fa;
+      --text: #0b1220;
+      --muted: #50575f;
+      --accent: #007aff;
+      --card: #ffffff;
+      --radius: 12px;
+      --maxw: 900px;
+      --line: 1.6;
+      --shadow: 0 6px 18px rgba(12,20,30,0.06);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    html,body{height:100%;background:var(--bg);color:var(--text);margin:0;}
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    .app {
+      min-height:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:24px 18px;
+      box-sizing:border-box;
+    }
+    .nav {
+      width:100%;
+      max-width:var(--maxw);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(247,248,250,0.8));
+      border-radius:14px;
+      box-shadow:var(--shadow);
+      margin-bottom:20px;
+      box-sizing:border-box;
+    }
+    .brand {
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .logo {
+      width:36px;height:36px;border-radius:9px;
+      background:linear-gradient(135deg,var(--accent),#5ac8fa);
+      display:flex;align-items:center;justify-content:center;
+      color:white;font-weight:700;font-size:18px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    }
+    .nav .links {
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    .seg {
+      display:inline-flex;
+      background:transparent;
+      border-radius:10px;
+      padding:4px;
+      gap:6px;
+      box-sizing:border-box;
+    }
+    .seg a {
+      padding:8px 12px;
+      border-radius:8px;
+      color:var(--muted);
+      font-weight:600;
+      font-size:14px;
+      border:1px solid transparent;
+      background:transparent;
+    }
+    .seg a[aria-current="page"]{
+      background:var(--card);
+      color:var(--text);
+      border-color:rgba(11,18,32,0.06);
+      box-shadow:0 4px 12px rgba(12,20,30,0.04);
+    }
+    main {
+      width:100%;
+      max-width:var(--maxw);
+      background:var(--card);
+      border-radius:14px;
+      padding:22px;
+      box-shadow:var(--shadow);
+      box-sizing:border-box;
+      margin-bottom:20px;
+    }
+    h1{margin:0 0 6px 0;font-size:20px}
+    .muted { color:var(--muted); font-size:14px; margin-bottom:18px; }
+    section{margin:18px 0;}
+    h2{font-size:16px;margin:0 0 8px 0}
+    p{margin:0 0 12px 0;line-height:var(--line); color:var(--muted)}
+    ul{margin:0 0 12px 20px;color:var(--muted)}
+    footer {
+      width:100%;
+      max-width:var(--maxw);
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+      padding:12px 6px;
+    }
+
+    /* Responsive */
+    @media (max-width:640px){
+      .nav{padding:12px}
+      .seg a{padding:9px 10px;font-size:13px}
+      main{padding:18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="app" role="document">
+    <header class="nav" role="navigation" aria-label="Top navigation">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">D</div>
+        <div>
+          <div style="font-weight:700;color:var(--text);">David App</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px;">Terms & Legal</div>
+        </div>
+      </div>
+
+      <nav class="links" aria-label="Legal navigation">
+        <div class="seg" role="tablist">
+          <a href="/david_app/privacy">Privacy Policy</a>
+          <a href="/david_app/terms" aria-current="page">Terms of Service</a>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main" aria-labelledby="terms-title">
+      <h1 id="terms-title">Terms of Service</h1>
+      <div class="muted">Effective date: August 25, 2026 — Last updated: August 25, 2026</div>
+
+      <section>
+        <h2>1. Acceptance of terms</h2>
+        <p>By downloading, installing, or using the David App, you agree to be bound by these Terms of Service ("Terms"). If you do not agree, please do not use the app.</p>
+      </section>
+
+      <section>
+        <h2>2. Access and use</h2>
+        <p>The app is licensed, not sold. You may use the app on compatible devices as permitted by these Terms and any law. You are responsible for complying with the App Store's terms and any applicable third-party terms.</p>
+      </section>
+
+      <section>
+        <h2>3. Intellectual property</h2>
+        <p>All content, design, code, and trademarks provided in the app are the property of the developer or licensors and are protected by copyright, trademark, and other laws. You may not copy, modify, distribute, create derivative works, or attempt to extract source code without permission.</p>
+      </section>
+
+      <section>
+        <h2>4. User conduct</h2>
+        <p>You agree not to use the app for unlawful activities or in a manner that interferes with others' use. Prohibited conduct includes:</p>
+        <ul>
+          <li>Reverse engineering, tampering, or attempting to break security protections.</li>
+          <li>Uploading or sharing illegal, abusive, or infringing content.</li>
+          <li>Using the app to harass, defraud, or harm others.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>5. Purchases and subcriptions</h2>
+        <p>If the app offers in-app purchases or subscriptions, those transactions are processed by the App Store and are subject to Apple's terms and pricing. Refunds and billing issues should be handled through the App Store.</p>
+      </section>
+
+      <section>
+        <h2>6. Limitation of liability</h2>
+        <p>To the fullest extent permitted by law, the developer and contributors shall not be liable for any indirect, incidental, special, consequential, or exemplary damages arising from your use of (or inability to use) the app. The app is provided "as is" without warranties of any kind.</p>
+      </section>
+
+      <section>
+        <h2>7. Termination</h2>
+        <p>We may suspend or terminate access to the app at any time for violation of these Terms or for other legitimate reasons. Termination does not waive any rights or remedies available to us under law.</p>
+      </section>
+
+      <section>
+        <h2>8. Modifications to these Terms</h2>
+        <p>We may modify these Terms from time to time. We will post the revised Terms here with an updated effective date. Continued use after changes constitutes acceptance of the updated Terms.</p>
+      </section>
+
+      <section>
+        <h2>9. Governing law and disputes</h2>
+        <p>These Terms are governed by the laws of the jurisdiction in which the developer is located, without regard to conflict of law principles. For questions or concerns, please contact us (see Contact Information).</p>
+      </section>
+
+      <section>
+        <h2>10. Contact information</h2>
+        <p>For any questions about these Terms or the app, you can reach out:</p>
+        <p><a href="mailto:legal@david-unity.dev">legal@david-unity.dev</a></p>
+      </section>
+    </main>
+
+    <footer>
+      Created with ❤️ by David — Independent iOS Developer. Feedback is always welcome!
+    </footer>
+  </div>
+</body>
+</html>
