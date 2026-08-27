@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#f2f3f7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+  <meta name="description" content="Support for the David App — contact David directly, browse FAQs, report a bug, or request data deletion." />
+  <title>Support — David App</title>
+  <style>
+    /* ============ Design tokens (shared by Privacy & Terms) ============ */
+    :root{
+      --bg:#f2f3f7;
+      --card:#ffffff;
+      --card-2:#fbfcfd;
+      --text:#0b1220;
+      --muted:#5b636d;
+      --accent:#007aff;
+      --accent-2:#5ac8fa;
+      --border:rgba(11,18,32,0.08);
+      --seg-bg:rgba(118,118,128,0.12);
+      --shadow-sm:0 1px 2px rgba(12,20,30,0.06);
+      --shadow:0 8px 24px rgba(12,20,30,0.07);
+      --radius:16px;
+      --maxw:820px;
+      --line:1.62;
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      -webkit-text-size-adjust:100%;
+    }
+
+    @media (prefers-color-scheme:dark){
+      :root{
+        --bg:#000000;
+        --card:#1c1c1e;
+        --card-2:#242426;
+        --text:#f5f6f8;
+        --muted:#a1a6ad;
+        --accent:#0a84ff;
+        --accent-2:#64d2ff;
+        --border:rgba(255,255,255,0.10);
+        --seg-bg:rgba(118,118,128,0.24);
+        --shadow-sm:0 1px 2px rgba(0,0,0,0.4);
+        --shadow:0 8px 24px rgba(0,0,0,0.5);
+      }
+    }
+
+    *,*::before,*::after{box-sizing:border-box}
+    html{height:100%}
+    body{
+      min-height:100%;
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{
+      min-height:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      width:100%;
+      padding:
+        calc(16px + env(safe-area-inset-top))
+        calc(16px + env(safe-area-inset-right))
+        calc(24px + env(safe-area-inset-bottom))
+        calc(16px + env(safe-area-inset-left));
+    }
+
+    /* ============ Header ============ */
+    .top{
+      width:100%;
+      max-width:var(--maxw);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:14px;
+      padding:18px 16px 14px;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      margin-bottom:16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+    .logo{
+      flex:0 0 auto;
+      width:46px;height:46px;
+      border-radius:13px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;
+      color:#fff;font-weight:700;font-size:22px;line-height:1;
+      box-shadow:0 4px 12px rgba(0,122,255,0.28);
+    }
+    .brand-text{min-width:0}
+    .brand .title{
+      font-weight:700;
+      font-size:19px;
+      line-height:1.2;
+      letter-spacing:-0.01em;
+      color:var(--text);
+    }
+    .brand .subtitle{
+      font-size:13px;
+      line-height:1.3;
+      color:var(--muted);
+      margin-top:2px;
+    }
+
+    /* iOS-style segmented control — full width & equal halves on mobile */
+    .seg{
+      display:flex;
+      width:100%;
+      gap:4px;
+      padding:3px;
+      background:var(--seg-bg);
+      border-radius:12px;
+    }
+    .seg a{
+      flex:1 1 0;
+      min-width:0;
+      min-height:38px;
+      padding:8px 10px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:9px;
+      font-size:14px;
+      font-weight:600;
+      line-height:1;
+      color:var(--muted);
+      white-space:nowrap;
+      transition:background .18s ease,color .18s ease;
+      -webkit-tap-highlight-color:transparent;
+    }
+    .seg a:hover{text-decoration:none}
+    .seg a[aria-current="page"]{
+      background:var(--accent);
+      color:#fff;
+      box-shadow:0 4px 12px rgba(0,122,255,0.28);
+    }
+
+    /* ============ Content ============ */
+    main{
+      width:100%;
+      max-width:var(--maxw);
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:20px 16px;
+      box-shadow:var(--shadow);
+    }
+    h1{
+      margin:0 0 6px;
+      font-size:24px;
+      line-height:1.25;
+      letter-spacing:-0.02em;
+    }
+    .meta{
+      color:var(--muted);
+      font-size:13px;
+      margin:0 0 18px;
+    }
+
+    section{
+      margin:0 0 12px;
+      padding:14px;
+      background:var(--card-2);
+      border:1px solid var(--border);
+      border-radius:12px;
+    }
+    section:last-child{margin-bottom:0}
+    h2{
+      margin:0 0 8px;
+      font-size:16px;
+      line-height:1.35;
+      letter-spacing:-0.01em;
+      color:var(--text);
+    }
+    p{
+      margin:0 0 10px;
+      font-size:15px;
+      line-height:var(--line);
+      color:var(--muted);
+    }
+    ul{
+      margin:0 0 10px;
+      padding-left:20px;
+      font-size:15px;
+      line-height:var(--line);
+      color:var(--muted);
+    }
+    li{margin-bottom:6px}
+    li:last-child{margin-bottom:0}
+    p:last-child,ul:last-child{margin-bottom:0}
+    strong{color:var(--text);font-weight:600}
+
+    footer{
+      width:100%;
+      max-width:var(--maxw);
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.5;
+      padding:18px 8px 4px;
+    }
+
+    /* ============ Breakpoints ============ */
+    @media (max-width:359px){
+      .seg a{font-size:13px;padding:8px 6px}
+      .brand .title{font-size:18px}
+    }
+
+    @media (min-width:640px){
+      .wrap{padding-left:24px;padding-right:24px;padding-top:28px}
+      .top{
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+        padding:16px 20px;
+        gap:20px;
+      }
+      .seg{width:auto;flex:0 0 auto}
+      .seg a{flex:0 0 auto;padding:8px 18px;min-height:36px}
+      main{padding:28px 26px}
+      h1{font-size:26px}
+      h2{font-size:17px}
+      section{padding:16px 18px}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      *{transition:none !important}
+    }
+
+    /* ============ Support-specific ============ */
+    .lead{
+      font-size:15.5px;
+      line-height:var(--line);
+      color:var(--muted);
+      margin:0 0 18px;
+    }
+
+    /* Primary contact card */
+    .contact-card{
+      background:linear-gradient(135deg,rgba(0,122,255,0.10),rgba(90,200,250,0.10));
+      border:1px solid rgba(0,122,255,0.22);
+    }
+    @media (prefers-color-scheme:dark){
+      .contact-card{
+        background:linear-gradient(135deg,rgba(10,132,255,0.16),rgba(100,210,255,0.10));
+        border-color:rgba(100,210,255,0.24);
+      }
+    }
+    .person{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:12px;
+    }
+    .avatar{
+      flex:0 0 auto;
+      width:44px;height:44px;
+      border-radius:50%;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#fff;
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;font-size:18px;line-height:1;
+      box-shadow:0 4px 12px rgba(0,122,255,0.28);
+    }
+    .person-name{
+      font-size:16px;
+      font-weight:700;
+      line-height:1.25;
+      color:var(--text);
+    }
+    .person-role{
+      font-size:13px;
+      line-height:1.35;
+      color:var(--muted);
+      margin-top:2px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      width:100%;
+      min-height:46px;
+      padding:12px 18px;
+      border-radius:12px;
+      background:var(--accent);
+      color:#fff !important;
+      font-size:15px;
+      font-weight:600;
+      line-height:1;
+      box-shadow:0 4px 14px rgba(0,122,255,0.28);
+      transition:transform .15s ease,opacity .15s ease;
+      -webkit-tap-highlight-color:transparent;
+    }
+    .btn:hover{text-decoration:none;opacity:.92}
+    .btn:active{transform:scale(0.985)}
+    .btn-secondary{
+      background:transparent;
+      color:var(--accent) !important;
+      border:1px solid var(--border);
+      box-shadow:none;
+    }
+    .btn-row{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin-top:12px;
+    }
+
+    .note{
+      font-size:13px;
+      line-height:1.5;
+      color:var(--muted);
+      margin:10px 0 0;
+    }
+
+    /* Info rows (response time, languages, hours) */
+    .rows{
+      display:grid;
+      gap:8px;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+    .rows li{
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      gap:14px;
+      padding:10px 0;
+      border-bottom:1px solid var(--border);
+      font-size:15px;
+      line-height:1.45;
+      color:var(--muted);
+      margin:0;
+    }
+    .rows li:last-child{border-bottom:0;padding-bottom:0}
+    .rows li:first-child{padding-top:0}
+    .rows .k{color:var(--text);font-weight:600;flex:0 0 auto}
+    .rows .v{text-align:right}
+
+    /* FAQ */
+    details{
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:var(--card);
+      padding:0;
+      margin-bottom:8px;
+      overflow:hidden;
+    }
+    details:last-of-type{margin-bottom:0}
+    summary{
+      list-style:none;
+      cursor:pointer;
+      padding:13px 40px 13px 14px;
+      font-size:15px;
+      font-weight:600;
+      line-height:1.4;
+      color:var(--text);
+      position:relative;
+      -webkit-tap-highlight-color:transparent;
+    }
+    summary::-webkit-details-marker{display:none}
+    summary::after{
+      content:"";
+      position:absolute;
+      right:16px;
+      top:50%;
+      width:8px;height:8px;
+      border-right:2px solid var(--muted);
+      border-bottom:2px solid var(--muted);
+      transform:translateY(-70%) rotate(45deg);
+      transition:transform .2s ease;
+    }
+    details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+    details .body{
+      padding:0 14px 14px;
+    }
+    details .body p{margin:0 0 8px}
+    details .body p:last-child{margin-bottom:0}
+    details .body ul{margin:0}
+
+    /* Checklist for bug reports */
+    ol{
+      margin:0 0 10px;
+      padding-left:20px;
+      font-size:15px;
+      line-height:var(--line);
+      color:var(--muted);
+    }
+    ol li{margin-bottom:6px}
+    ol li:last-child{margin-bottom:0}
+    ol:last-child{margin-bottom:0}
+
+    .mailto-plain{
+      display:block;
+      font-size:15px;
+      font-weight:600;
+      word-break:break-word;
+    }
+
+    @media (min-width:640px){
+      .btn-row{flex-direction:row}
+      .btn{width:auto;flex:1 1 0}
+      summary{font-size:15.5px;padding:14px 42px 14px 16px}
+      details .body{padding:0 16px 16px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">D</div>
+        <div class="brand-text">
+          <div class="title">David App</div>
+          <div class="subtitle">Support &amp; Help Centre</div>
+        </div>
+      </div>
+
+      <nav class="seg" aria-label="Site navigation">
+        <a href="/david_app/support" aria-current="page">Support</a>
+        <a href="/david_app/privacy">Privacy</a>
+        <a href="/david_app/terms">Terms</a>
+      </nav>
+    </header>
+
+    <main aria-labelledby="support-title">
+      <h1 id="support-title">Support</h1>
+      <div class="meta">Last updated: August 25, 2026</div>
+
+      <p class="lead">Need help with the David App? You are in the right place. Every message is read and answered personally by David, the independent developer behind the app — there is no ticket queue and no chatbot.</p>
+
+      <section class="contact-card">
+        <h2>Contact support</h2>
+
+        <div class="person">
+          <div class="avatar" aria-hidden="true">D</div>
+          <div>
+            <div class="person-name">David</div>
+            <div class="person-role">Independent iOS Developer &amp; Support Contact</div>
+          </div>
+        </div>
+
+        <p>Email is the fastest and most reliable way to reach support. Please write in English so we can help you as quickly as possible.</p>
+
+        <p><a class="mailto-plain" href="mailto:david.dev.unity@gmail.com">david.dev.unity@gmail.com</a></p>
+
+        <div class="btn-row">
+          <a class="btn" href="mailto:david.dev.unity@gmail.com?subject=David%20App%20—%20Support%20Request">Email support</a>
+          <a class="btn btn-secondary" href="mailto:david.dev.unity@gmail.com?subject=David%20App%20—%20Bug%20Report&amp;body=Device%3A%20%0AiOS%20version%3A%20%0AApp%20version%3A%20%0A%0AWhat%20happened%3A%20%0A%0ASteps%20to%20reproduce%3A%20%0A1.%20%0A2.%20%0A3.%20">Report a bug</a>
+        </div>
+
+        <p class="note">Tapping a button above opens your mail app with a pre-filled message. If it does not open, simply copy the address and email us directly.</p>
+      </section>
+
+      <section>
+        <h2>Response times &amp; availability</h2>
+        <ul class="rows">
+          <li><span class="k">Typical first reply</span><span class="v">Within 24–48 hours</span></li>
+          <li><span class="k">Business days</span><span class="v">Monday – Friday</span></li>
+          <li><span class="k">Weekends &amp; holidays</span><span class="v">Replies may take longer</span></li>
+          <li><span class="k">Support language</span><span class="v">English</span></li>
+          <li><span class="k">Support channel</span><span class="v">Email only</span></li>
+        </ul>
+        <p class="note">The David App is built and maintained by one person. If you have not heard back after 3 business days, please send a follow-up — occasionally messages are caught by spam filters.</p>
+      </section>
+
+      <section>
+        <h2>Before you write: how to get a faster fix</h2>
+        <p>Including the details below in your first email usually saves several rounds of back-and-forth:</p>
+        <ol>
+          <li>Your <strong>device model</strong> (for example, iPhone 14 Pro) and <strong>iOS version</strong>.</li>
+          <li>The <strong>app version</strong> you are using (shown in the app's Settings or About screen).</li>
+          <li>A short description of <strong>what you expected</strong> and <strong>what actually happened</strong>.</li>
+          <li>The <strong>steps to reproduce</strong> the issue, in order.</li>
+          <li>A <strong>screenshot or screen recording</strong>, if the issue is visual.</li>
+        </ol>
+        <p class="note">Please never include passwords, payment card numbers, or other sensitive credentials in a support email. We will never ask you for them.</p>
+      </section>
+
+      <section>
+        <h2>Frequently asked questions</h2>
+
+        <details>
+          <summary>The app crashes or freezes — what should I do?</summary>
+          <div class="body">
+            <p>Please try these steps first, in order:</p>
+            <ul>
+              <li>Force-quit the app and reopen it.</li>
+              <li>Restart your device.</li>
+              <li>Update to the latest app version from the App Store.</li>
+              <li>Make sure your iOS version is up to date.</li>
+              <li>As a last resort, delete and reinstall the app (note: locally stored data may be lost).</li>
+            </ul>
+            <p>If the problem persists, email us with your device model, iOS version, app version, and the steps that lead to the crash.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I restore a purchase or subscription?</summary>
+          <div class="body">
+            <p>Open the app, go to the purchase or premium screen, and choose <strong>Restore Purchases</strong>. Make sure you are signed in with the same Apple ID used for the original purchase.</p>
+            <p>If the restore does not work, email us the approximate purchase date and the Apple ID region (not your password), and we will help verify your entitlement.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I request a refund or cancel a subscription?</summary>
+          <div class="body">
+            <p>All purchases and subscriptions are processed by Apple through the App Store. Refunds, cancellations, and billing disputes are handled by Apple, not by us.</p>
+            <ul>
+              <li><strong>Refunds:</strong> visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer">reportaproblem.apple.com</a> and sign in with your Apple ID.</li>
+              <li><strong>Cancel a subscription:</strong> iOS <em>Settings</em> → your name → <em>Subscriptions</em>.</li>
+            </ul>
+            <p>If Apple's flow does not resolve your issue, contact us and we will assist where we can.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Why does the app ask for camera, photo, microphone, or location access?</summary>
+          <div class="body">
+            <p>The app only requests permissions needed for features you choose to use, and requests them at the moment the feature is used. If you deny a permission, the related feature is simply disabled — the rest of the app keeps working.</p>
+            <p>You can change any permission at any time in iOS <em>Settings</em> → <em>David App</em>. Full details are in our <a href="/david_app/privacy">Privacy Policy</a>.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I turn notifications on or off?</summary>
+          <div class="body">
+            <p>Notifications are opt-in. You can enable or disable them at any time in iOS <em>Settings</em> → <em>Notifications</em> → <em>David App</em>.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What data does the app collect?</summary>
+          <div class="body">
+            <p>We collect as little as possible: contact details you provide when emailing support, anonymous usage and crash diagnostics, and basic device/technical data used for debugging. We never sell your personal information.</p>
+            <p>See the <a href="/david_app/privacy">Privacy Policy</a> for the complete breakdown.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I request deletion of my data?</summary>
+          <div class="body">
+            <p>Email <a href="mailto:david.dev.unity@gmail.com?subject=David%20App%20—%20Data%20Deletion%20Request">david.dev.unity@gmail.com</a> with the subject "Data Deletion Request" from the email address associated with your enquiry.</p>
+            <p>We will delete or anonymise your data unless we are legally required to retain it, and confirm once it is done. You may also request access to or correction of your data the same way.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>I have a feature request or general feedback.</summary>
+          <div class="body">
+            <p>Feedback is genuinely welcome and shapes what gets built next. Email us with the subject "Feature Request" and describe the problem you would like solved — knowing the <em>why</em> behind a request is often more useful than the exact feature.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Do you support children's accounts?</summary>
+          <div class="body">
+            <p>The David App is not intended for children under the age of 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us and we will remove it promptly.</p>
+          </div>
+        </details>
+      </section>
+
+      <section>
+        <h2>Report a security issue</h2>
+        <p>If you believe you have found a security or privacy vulnerability in the David App, please report it privately to <a href="mailto:david.dev.unity@gmail.com?subject=David%20App%20—%20Security%20Report">david.dev.unity@gmail.com</a> rather than disclosing it publicly. Include the steps to reproduce and any relevant details, and we will investigate and respond as quickly as possible.</p>
+      </section>
+
+      <section>
+        <h2>Legal &amp; policies</h2>
+        <p>For details on how your data is handled and the rules that govern use of the app:</p>
+        <ul>
+          <li><a href="/david_app/privacy">Privacy Policy</a> — what we collect, why, and your choices.</li>
+          <li><a href="/david_app/terms">Terms of Service</a> — licence, purchases, and limitations.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>App &amp; support details</h2>
+        <ul class="rows">
+          <li><span class="k">App name</span><span class="v">David App</span></li>
+          <li><span class="k">Developer</span><span class="v">David — Independent iOS Developer</span></li>
+          <li><span class="k">Support contact</span><span class="v"><a href="mailto:david.dev.unity@gmail.com">david.dev.unity@gmail.com</a></span></li>
+          <li><span class="k">Platform</span><span class="v">iOS / iPadOS</span></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      Created with ❤️ by David — Independent iOS Developer. Feedback is always welcome!
+    </footer>
+  </div>
+</body>
+</html>
