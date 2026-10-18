@@ -6,8 +6,8 @@
   <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#f2f3f7" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
-  <meta name="description" content="Privacy Policy for the David App — what data we collect, why, and your choices." />
-  <title>Privacy Policy — David App</title>
+  <meta name="description" content="Privacy Policy for QR Plus — QR code &amp; barcode scanner and creator for iPhone. What the app accesses, what is collected, why, and your choices." />
+  <title>Privacy Policy — QR Plus</title>
   <style>
     /* ============ Design tokens (shared by Privacy & Terms) ============ */
     :root{
@@ -247,9 +247,9 @@
   <div class="wrap">
     <header class="top">
       <div class="brand">
-        <div class="logo" aria-hidden="true">D</div>
+        <div class="logo" aria-hidden="true">Q</div>
         <div class="brand-text">
-          <div class="title">David App</div>
+          <div class="title">QR Plus</div>
           <div class="subtitle">Privacy &amp; Legal</div>
         </div>
       </div>
@@ -263,80 +263,99 @@
 
     <main aria-labelledby="privacy-title">
       <h1 id="privacy-title">Privacy Policy</h1>
-      <div class="meta">Effective date: August 25, 2026 — Last updated: August 25, 2026</div>
+      <div class="meta">Effective date: October 18, 2026 — Last updated: October 18, 2026</div>
 
       <section>
-        <h2>1. Our commitment to your privacy</h2>
-        <p>We take your privacy and the security of your data seriously. This Privacy Policy explains what data the David App collects, why we collect it, how it is used, and the choices you have. We design the app to collect as little data as possible, and we never sell your personal information.</p>
+        <h2>1. Who we are</h2>
+        <p>This Privacy Policy applies to <strong>QR Plus</strong>, a QR code and barcode scanner and creator for iPhone ("the app"). QR Plus is developed and published by David, an independent iOS developer ("we", "us").</p>
+        <p>This policy explains what the app accesses on your device, what information is collected, why, and the choices you have.</p>
       </section>
 
       <section>
-        <h2>2. Data we collect</h2>
-        <p>We may collect the following categories of information, depending on the app features you use:</p>
+        <h2>2. Summary</h2>
         <ul>
-          <li><strong>Personal information:</strong> email address, display name, or contact details you provide when contacting support.</li>
-          <li><strong>Usage &amp; analytics:</strong> anonymous usage data (crash reports, diagnostics, feature usage) to improve stability and experience.</li>
-          <li><strong>Device &amp; technical data:</strong> device model, OS version, app version, and unique device identifiers for debugging and analytics.</li>
+          <li>QR Plus has <strong>no accounts and no sign-in</strong>.</li>
+          <li>The codes you scan or create, and your history, <strong>stay on your device</strong>. We do not run any server that receives them.</li>
+          <li>We use Google Firebase to collect <strong>anonymous usage statistics and crash reports</strong> so we can fix bugs and improve the app.</li>
+          <li>We <strong>do not sell</strong> your personal information.</li>
         </ul>
       </section>
 
       <section>
-        <h2>3. Device permissions</h2>
-        <p>The app only requests permissions that are necessary for features you choose to use. Examples include:</p>
+        <h2>3. Permissions and information that stays on your device</h2>
+        <p>QR Plus asks for a permission only when you use the feature that needs it:</p>
         <ul>
-          <li><strong>Camera / Photos:</strong> requested only for optional features that let you take or select images. Images remain on your device unless you explicitly upload or share them.</li>
-          <li><strong>Microphone:</strong> requested only if a feature requires voice input; recordings are not collected without your consent.</li>
-          <li><strong>Location:</strong> requested only for location-specific features and only while using the feature (if applicable).</li>
-          <li><strong>Notifications:</strong> used to deliver opt-in alerts; you may disable them anytime in iOS Settings.</li>
+          <li><strong>Camera:</strong> used to detect QR codes and barcodes in real time. Camera frames are processed on your device and are never recorded, stored or uploaded.</li>
+          <li><strong>Photos:</strong> when you choose <em>Scan photos</em>, the image you pick is analysed on your device to find a code. When you save a QR code, the app adds the image to your photo library (add-only access).</li>
+          <li><strong>Contacts:</strong> used only when you pick a contact to create a contact QR code, or save a contact card you scanned.</li>
+          <li><strong>Calendar:</strong> used only when you add a scanned event to your calendar, or pick an event to create an event QR code.</li>
+          <li><strong>Wi-Fi:</strong> when you tap <em>Connect</em> on a scanned Wi-Fi code, the network name and password are passed to iOS so your device can join that network.</li>
+          <li><strong>History:</strong> codes you scan or create are stored in the app's local database. You can delete items in <em>History</em>; deleting the app removes all of it. History is not synced to any server or to iCloud.</li>
         </ul>
-        <p>If you deny a permission the related functionality will be disabled, and you can change permissions at any time in iOS Settings for the app.</p>
+        <p>You can deny or revoke any permission at any time in the iOS <em>Settings</em> app. Features that need a permission simply won't work without it; the rest of the app keeps working.</p>
       </section>
 
       <section>
-        <h2>4. Third-party services and sharing</h2>
-        <p>We may share limited data with trusted third parties to provide services, such as analytics and crash reporting. These providers process data according to their own policies and only to the extent necessary to perform those services on our behalf.</p>
+        <h2>4. Information collected by third-party services</h2>
+        <p>QR Plus uses the following services from Google:</p>
         <ul>
-          <li>Crash reporting and analytics providers (to help diagnose issues).</li>
-          <li>Hosting providers for server-side features (when applicable).</li>
+          <li><strong>Firebase Analytics:</strong> app usage events (for example, screens opened and features used), app version, device model, OS version, approximate location (country/city derived from IP address) and a random app-instance identifier — used to understand how the app is used and to improve it.</li>
+          <li><strong>Firebase Crashlytics:</strong> crash logs and stack traces, device model, OS version and a random installation identifier — used to diagnose and fix crashes.</li>
+          <li><strong>Firebase Remote Config:</strong> a random installation identifier and the app version — used to deliver app configuration.</li>
+          <li><strong>Google ML Kit Barcode Scanning:</strong> images are processed <strong>entirely on your device</strong> and are not sent anywhere. ML Kit may send Google technical information such as device model, app version and performance metrics.</li>
         </ul>
-        <p>We do not sell your personal information to advertisers. Any sharing is minimal, controlled, and necessary for the services above.</p>
+        <p>This information is not linked to your name, email address or any account — QR Plus has no accounts. Each provider processes data under its own policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a> · <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase privacy information</a>.</p>
       </section>
 
       <section>
-        <h2>5. Purchases and advertising data</h2>
-        <p>If you make an in-app purchase, the transaction is processed by Apple through the App Store; we do not receive or store your payment details. We may keep minimal purchase-related data (such as a receipt token and purchase timestamp) solely to verify and restore your entitlement to paid features.</p>
-        <p>If the app displays third-party advertisements, ad networks may collect device and usage information (such as advertising identifiers) to deliver and measure ads. You control ad personalization through your device settings and App Tracking Transparency.</p>
+        <h2>5. Advertising and tracking</h2>
+        <p>The current version of QR Plus <strong>does not display advertisements</strong>.</p>
+        <p>QR Plus may ask your permission to track through Apple's App Tracking Transparency prompt. <strong>Only if you allow it</strong>, Firebase Analytics may receive your device's advertising identifier (IDFA). If you choose <em>Ask App Not to Track</em>, the identifier is not accessed. You can change this at any time in iOS <em>Settings</em> → <em>Privacy &amp; Security</em> → <em>Tracking</em>.</p>
       </section>
 
       <section>
-        <h2>6. Data retention and deletion</h2>
-        <p>We retain data only as long as necessary to provide the app and comply with our legal obligations. If you would like your data deleted, please contact us (see Contact information). Upon request we will delete or anonymize your data, unless we are required to retain it by law.</p>
+        <h2>6. In-app purchases</h2>
+        <p>Purchases of QR Plus Premium are processed by Apple through the App Store. We never receive your payment card details. The app only receives from Apple the transaction information needed to unlock Premium and to restore your purchases.</p>
       </section>
 
       <section>
-        <h2>7. Security</h2>
-        <p>We use administrative, technical, and physical safeguards appropriate to the sensitivity of the data, including encryption for data in transit (TLS) and access controls. While we strive to protect your information, no method of transmission or storage is completely secure, and we cannot guarantee absolute security.</p>
+        <h2>7. Links and content inside scanned codes</h2>
+        <p>Codes you scan may contain links to websites, apps or services that we do not operate. When you open them, the privacy policy of that third party applies. Please check a link before opening it.</p>
       </section>
 
       <section>
-        <h2>8. Children</h2>
-        <p>The David App is not intended for children under the age of 13. If you are a parent or guardian and believe your child provided us with personal information, please contact us so we can take appropriate steps to remove that information.</p>
+        <h2>8. Retention and deletion</h2>
+        <ul>
+          <li>Data on your device stays until you delete it in the app or delete the app.</li>
+          <li>Data held by Firebase is retained according to Google's retention settings (for example, Crashlytics keeps crash reports for 90 days) and is then deleted automatically.</li>
+          <li>Depending on where you live (for example the EEA, the UK or California), you may have the right to access or delete your personal information. Contact us and we will help.</li>
+        </ul>
       </section>
 
       <section>
-        <h2>9. Changes to this policy</h2>
-        <p>We may update this Privacy Policy from time to time. We will post the updated policy here with a revised effective date. Significant changes will be communicated where feasible.</p>
+        <h2>9. Security</h2>
+        <p>Information sent to Firebase is encrypted in transit (TLS). While we take reasonable steps to protect information, no method of transmission or storage is completely secure.</p>
       </section>
 
       <section>
-        <h2>10. Contact information</h2>
-        <p>If you have questions or requests about your data (access, correction, deletion), please reach out:</p>
-        <p><a href="mailto:david.dev.unity@gmail.com">david.dev.unity@gmail.com</a></p>
+        <h2>10. Children</h2>
+        <p>QR Plus is not directed to children under 13, and we do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us so we can remove it.</p>
+      </section>
+
+      <section>
+        <h2>11. Changes to this policy</h2>
+        <p>We may update this policy when the app changes. The new version will be posted on this page with a new effective date.</p>
+      </section>
+
+      <section>
+        <h2>12. Contact</h2>
+        <p>Questions or requests about your data (access, correction, deletion):</p>
+        <p><a href="mailto:david.dev.unity@gmail.com?subject=QR%20Plus%20—%20Privacy">david.dev.unity@gmail.com</a></p>
       </section>
     </main>
 
     <footer>
-      Created with ❤️ by David — Independent iOS Developer. Feedback is always welcome!
+      QR Plus is made by David — Independent iOS Developer. Feedback is always welcome!
     </footer>
   </div>
 </body>
