@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#f2f3f7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+  <meta name="description" content="Privacy Policy for Pomodoro — Pomodoro timer for iPhone, iPad and Mac. What the app accesses, what is collected, why, and your choices." />
+  <title>Privacy Policy — Pomodoro</title>
+  <style>
+    /* ============ Design tokens (shared by Privacy & Terms) ============ */
+    :root{
+      --bg:#f2f3f7;
+      --card:#ffffff;
+      --card-2:#fbfcfd;
+      --text:#0b1220;
+      --muted:#5b636d;
+      --accent:#007aff;
+      --accent-2:#5ac8fa;
+      --border:rgba(11,18,32,0.08);
+      --seg-bg:rgba(118,118,128,0.12);
+      --shadow-sm:0 1px 2px rgba(12,20,30,0.06);
+      --shadow:0 8px 24px rgba(12,20,30,0.07);
+      --radius:16px;
+      --maxw:820px;
+      --line:1.62;
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      -webkit-text-size-adjust:100%;
+    }
+
+    @media (prefers-color-scheme:dark){
+      :root{
+        --bg:#000000;
+        --card:#1c1c1e;
+        --card-2:#242426;
+        --text:#f5f6f8;
+        --muted:#a1a6ad;
+        --accent:#0a84ff;
+        --accent-2:#64d2ff;
+        --border:rgba(255,255,255,0.10);
+        --seg-bg:rgba(118,118,128,0.24);
+        --shadow-sm:0 1px 2px rgba(0,0,0,0.4);
+        --shadow:0 8px 24px rgba(0,0,0,0.5);
+      }
+    }
+
+    *,*::before,*::after{box-sizing:border-box}
+    html{height:100%}
+    body{
+      min-height:100%;
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{
+      min-height:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      width:100%;
+      padding:
+        calc(16px + env(safe-area-inset-top))
+        calc(16px + env(safe-area-inset-right))
+        calc(24px + env(safe-area-inset-bottom))
+        calc(16px + env(safe-area-inset-left));
+    }
+
+    /* ============ Header ============ */
+    .top{
+      width:100%;
+      max-width:var(--maxw);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:14px;
+      padding:18px 16px 14px;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      margin-bottom:16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+    .logo{
+      flex:0 0 auto;
+      width:46px;height:46px;
+      border-radius:13px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;
+      color:#fff;font-weight:700;font-size:22px;line-height:1;
+      box-shadow:0 4px 12px rgba(0,122,255,0.28);
+    }
+    .brand-text{min-width:0}
+    .brand .title{
+      font-weight:700;
+      font-size:19px;
+      line-height:1.2;
+      letter-spacing:-0.01em;
+      color:var(--text);
+    }
+    .brand .subtitle{
+      font-size:13px;
+      line-height:1.3;
+      color:var(--muted);
+      margin-top:2px;
+    }
+
+    /* iOS-style segmented control — full width & equal halves on mobile */
+    .seg{
+      display:flex;
+      width:100%;
+      gap:4px;
+      padding:3px;
+      background:var(--seg-bg);
+      border-radius:12px;
+    }
+    .seg a{
+      flex:1 1 0;
+      min-width:0;
+      min-height:38px;
+      padding:8px 10px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:9px;
+      font-size:14px;
+      font-weight:600;
+      line-height:1;
+      color:var(--muted);
+      white-space:nowrap;
+      transition:background .18s ease,color .18s ease;
+      -webkit-tap-highlight-color:transparent;
+    }
+    .seg a:hover{text-decoration:none}
+    .seg a[aria-current="page"]{
+      background:var(--accent);
+      color:#fff;
+      box-shadow:0 4px 12px rgba(0,122,255,0.28);
+    }
+
+    /* ============ Content ============ */
+    main{
+      width:100%;
+      max-width:var(--maxw);
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:20px 16px;
+      box-shadow:var(--shadow);
+    }
+    h1{
+      margin:0 0 6px;
+      font-size:24px;
+      line-height:1.25;
+      letter-spacing:-0.02em;
+    }
+    .meta{
+      color:var(--muted);
+      font-size:13px;
+      margin:0 0 18px;
+    }
+
+    section{
+      margin:0 0 12px;
+      padding:14px;
+      background:var(--card-2);
+      border:1px solid var(--border);
+      border-radius:12px;
+    }
+    section:last-child{margin-bottom:0}
+    h2{
+      margin:0 0 8px;
+      font-size:16px;
+      line-height:1.35;
+      letter-spacing:-0.01em;
+      color:var(--text);
+    }
+    p{
+      margin:0 0 10px;
+      font-size:15px;
+      line-height:var(--line);
+      color:var(--muted);
+    }
+    ul{
+      margin:0 0 10px;
+      padding-left:20px;
+      font-size:15px;
+      line-height:var(--line);
+      color:var(--muted);
+    }
+    li{margin-bottom:6px}
+    li:last-child{margin-bottom:0}
+    p:last-child,ul:last-child{margin-bottom:0}
+    strong{color:var(--text);font-weight:600}
+
+    footer{
+      width:100%;
+      max-width:var(--maxw);
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.5;
+      padding:18px 8px 4px;
+    }
+
+    /* ============ Breakpoints ============ */
+    @media (max-width:359px){
+      .seg a{font-size:13px;padding:8px 6px}
+      .brand .title{font-size:18px}
+    }
+
+    @media (min-width:640px){
+      .wrap{padding-left:24px;padding-right:24px;padding-top:28px}
+      .top{
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+        padding:16px 20px;
+        gap:20px;
+      }
+      .seg{width:auto;flex:0 0 auto}
+      .seg a{flex:0 0 auto;padding:8px 18px;min-height:36px}
+      main{padding:28px 26px}
+      h1{font-size:26px}
+      h2{font-size:17px}
+      section{padding:16px 18px}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      *{transition:none !important}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">P</div>
+        <div class="brand-text">
+          <div class="title">Pomodoro</div>
+          <div class="subtitle">Privacy &amp; Legal</div>
+        </div>
+      </div>
+
+      <nav class="seg" aria-label="Site navigation">
+        <a href="/david_app/pomodoro/support">Support</a>
+        <a href="/david_app/pomodoro/privacy" aria-current="page">Privacy</a>
+        <a href="/david_app/pomodoro/terms">Terms</a>
+      </nav>
+    </header>
+
+    <main aria-labelledby="privacy-title">
+      <h1 id="privacy-title">Privacy Policy</h1>
+      <div class="meta">Effective date: November 15, 2026 — Last updated: November 15, 2026</div>
+
+      <section>
+        <h2>1. Who we are</h2>
+        <p>This Privacy Policy applies to <strong>Pomodoro</strong>, a Pomodoro timer app for iPhone, iPad and Mac ("the app"). Pomodoro is developed and published by David, an independent iOS developer ("we", "us").</p>
+        <p>This policy explains what the app accesses on your device, what information is collected, why, and the choices you have.</p>
+      </section>
+
+      <section>
+        <h2>2. Summary</h2>
+        <ul>
+          <li>Pomodoro has <strong>no accounts and no sign-in</strong>.</li>
+          <li>Your session history, categories and settings <strong>stay on your device</strong>. We do not run any server that receives them, and there is no iCloud sync.</li>
+          <li>We use Google Firebase to collect <strong>anonymous usage statistics and crash reports</strong> so we can fix bugs and improve the app. You can turn either one off in the app.</li>
+          <li>The app <strong>does not show advertisements</strong> and <strong>does not track you</strong>.</li>
+          <li>We <strong>do not sell</strong> your personal information.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. Notifications and information that stays on your device</h2>
+        <p>Pomodoro asks for a permission only when you use the feature that needs it:</p>
+        <ul>
+          <li><strong>Notifications:</strong> if you allow notifications, the app shows a local notification on your device when a focus session ends. There is no push server. You can turn notifications off at any time.</li>
+          <li><strong>Session history, categories and settings:</strong> stored on your device, in the app's own storage and in an App Group shared with the app's own widget. This data is not synced to iCloud or to any server of ours. In the app's <em>Data and settings</em> screen you can reset your settings and delete all session history. Deleting the app removes all of it.</li>
+          <li><strong>Built-in sounds:</strong> the background sounds are included in the app and play on your device.</li>
+        </ul>
+        <p>You can change notification permission at any time in the iOS <em>Settings</em> app.</p>
+      </section>
+
+      <section>
+        <h2>4. Information collected by third-party services</h2>
+        <p>Pomodoro uses the following services from Google:</p>
+        <ul>
+          <li><strong>Firebase Analytics:</strong> app usage events, app version, device model, OS version, approximate location (country/city derived from IP address) and a random app-instance identifier — used to understand how the app is used and to improve it. Pomodoro's build of Firebase Analytics is built <strong>without the advertising identifier</strong> (IDFA). You can turn it off with <em>Share usage statistics</em> in the app.</li>
+          <li><strong>Firebase Crashlytics:</strong> crash logs and stack traces, device model, OS version and a random installation identifier — used to diagnose and fix crashes. You can turn it off with <em>Send crash reports</em> in the app.</li>
+          <li><strong>Firebase Remote Config:</strong> a random installation identifier and the app version — used to deliver app configuration values.</li>
+        </ul>
+        <p>Category names and anything you type in the app are <strong>never sent</strong> to these services.</p>
+        <p>This information is not linked to your name, email address or any account — Pomodoro has no accounts. Each provider processes data under its own policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a> · <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase privacy information</a>.</p>
+      </section>
+
+      <section>
+        <h2>5. Advertising and tracking</h2>
+        <p>The current version of Pomodoro <strong>does not display advertisements</strong>.</p>
+        <p>Pomodoro <strong>does not track you</strong> across apps or websites owned by other companies. It never asks for permission to track through Apple's App Tracking Transparency prompt, and its build of Firebase Analytics does not use the advertising identifier (IDFA).</p>
+      </section>
+
+      <section>
+        <h2>6. In-app purchases</h2>
+        <p>Purchases of Pomodoro Premium are processed by Apple through the App Store. We never receive your payment card details. The app only receives from Apple the transaction information needed to unlock Premium and to restore your purchases.</p>
+      </section>
+
+      <section>
+        <h2>7. Retention and deletion</h2>
+        <ul>
+          <li>Data on your device stays until you delete it in the app or delete the app.</li>
+          <li>Data held by Firebase is retained according to Google's retention settings and is then deleted automatically.</li>
+          <li>Depending on where you live (for example the EEA, the UK or California), you may have the right to access or delete your personal information. Contact us and we will help.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>8. Security</h2>
+        <p>Information sent to Firebase is encrypted in transit (TLS). While we take reasonable steps to protect information, no method of transmission or storage is completely secure.</p>
+      </section>
+
+      <section>
+        <h2>9. Children</h2>
+        <p>Pomodoro is not directed to children under 13, and we do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us so we can remove it.</p>
+      </section>
+
+      <section>
+        <h2>10. Changes to this policy</h2>
+        <p>We may update this policy when the app changes. The new version will be posted on this page with a new effective date.</p>
+      </section>
+
+      <section>
+        <h2>11. Contact</h2>
+        <p>Questions or requests about your data (access, correction, deletion):</p>
+        <p><a href="mailto:david.dev.unity@gmail.com?subject=Pomodoro%20—%20Privacy">david.dev.unity@gmail.com</a></p>
+      </section>
+    </main>
+
+    <footer>
+      Pomodoro is made by David — Independent iOS Developer. Feedback is always welcome!
+    </footer>
+  </div>
+</body>
+</html>

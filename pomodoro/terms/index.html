@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#f2f3f7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+  <meta name="description" content="Terms of Use for Pomodoro — license, Pomodoro Premium, auto-renewable subscriptions, restore and refunds." />
+  <title>Terms of Use — Pomodoro</title>
+  <style>
+    /* ============ Design tokens (shared by Privacy & Terms) ============ */
+    :root{
+      --bg:#f2f3f7;
+      --card:#ffffff;
+      --card-2:#fbfcfd;
+      --text:#0b1220;
+      --muted:#5b636d;
+      --accent:#007aff;
+      --accent-2:#5ac8fa;
+      --border:rgba(11,18,32,0.08);
+      --seg-bg:rgba(118,118,128,0.12);
+      --shadow-sm:0 1px 2px rgba(12,20,30,0.06);
+      --shadow:0 8px 24px rgba(12,20,30,0.07);
+      --radius:16px;
+      --maxw:820px;
+      --line:1.62;
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      -webkit-text-size-adjust:100%;
+    }
+
+    @media (prefers-color-scheme:dark){
+      :root{
+        --bg:#000000;
+        --card:#1c1c1e;
+        --card-2:#242426;
+        --text:#f5f6f8;
+        --muted:#a1a6ad;
+        --accent:#0a84ff;
+        --accent-2:#64d2ff;
+        --border:rgba(255,255,255,0.10);
+        --seg-bg:rgba(118,118,128,0.24);
+        --shadow-sm:0 1px 2px rgba(0,0,0,0.4);
+        --shadow:0 8px 24px rgba(0,0,0,0.5);
+      }
+    }
+
+    *,*::before,*::after{box-sizing:border-box}
+    html{height:100%}
+    body{
+      min-height:100%;
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{
+      min-height:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      width:100%;
+      padding:
+        calc(16px + env(safe-area-inset-top))
+        calc(16px + env(safe-area-inset-right))
+        calc(24px + env(safe-area-inset-bottom))
+        calc(16px + env(safe-area-inset-left));
+    }
+
+    /* ============ Header ============ */
+    .top{
+      width:100%;
+      max-width:var(--maxw);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:14px;
+      padding:18px 16px 14px;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      margin-bottom:16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+    .logo{
+      flex:0 0 auto;
+      width:46px;height:46px;
+      border-radius:13px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;
+      color:#fff;font-weight:700;font-size:22px;line-height:1;
+      box-shadow:0 4px 12px rgba(0,122,255,0.28);
+    }
+    .brand-text{min-width:0}
+    .brand .title{
+      font-weight:700;
+      font-size:19px;
+      line-height:1.2;
+      letter-spacing:-0.01em;
+      color:var(--text);
+    }
+    .brand .subtitle{
+      font-size:13px;
+      line-height:1.3;
+      color:var(--muted);
+      margin-top:2px;
+    }
+
+    /* iOS-style segmented control — full width & equal halves on mobile */
+    .seg{
+      display:flex;
+      width:100%;
+      gap:4px;
+      padding:3px;
+      background:var(--seg-bg);
+      border-radius:12px;
+    }
+    .seg a{
+      flex:1 1 0;
+      min-width:0;
+      min-height:38px;
+      padding:8px 10px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:9px;
+      font-size:14px;
+      font-weight:600;
+      line-height:1;
+      color:var(--muted);
+      white-space:nowrap;
+      transition:background .18s ease,color .18s ease;
+      -webkit-tap-highlight-color:transparent;
+    }
+    .seg a:hover{text-decoration:none}
+    .seg a[aria-current="page"]{
+      background:var(--accent);
+      color:#fff;
+      box-shadow:0 4px 12px rgba(0,122,255,0.28);
+    }
+
+    /* ============ Content ============ */
+    main{
+      width:100%;
+      max-width:var(--maxw);
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:20px 16px;
+      box-shadow:var(--shadow);
+    }
+    h1{
+      margin:0 0 6px;
+      font-size:24px;
+      line-height:1.25;
+      letter-spacing:-0.02em;
+    }
+    .meta{
+      color:var(--muted);
+      font-size:13px;
+      margin:0 0 18px;
+    }
+
+    section{
+      margin:0 0 12px;
+      padding:14px;
+      background:var(--card-2);
+      border:1px solid var(--border);
+      border-radius:12px;
+    }
+    section:last-child{margin-bottom:0}
+    h2{
+      margin:0 0 8px;
+      font-size:16px;
+      line-height:1.35;
+      letter-spacing:-0.01em;
+      color:var(--text);
+    }
+    p{
+      margin:0 0 10px;
+      font-size:15px;
+      line-height:var(--line);
+      color:var(--muted);
+    }
+    ul{
+      margin:0 0 10px;
+      padding-left:20px;
+      font-size:15px;
+      line-height:var(--line);
+      color:var(--muted);
+    }
+    li{margin-bottom:6px}
+    li:last-child{margin-bottom:0}
+    p:last-child,ul:last-child{margin-bottom:0}
+    strong{color:var(--text);font-weight:600}
+
+    footer{
+      width:100%;
+      max-width:var(--maxw);
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.5;
+      padding:18px 8px 4px;
+    }
+
+    /* ============ Breakpoints ============ */
+    @media (max-width:359px){
+      .seg a{font-size:13px;padding:8px 6px}
+      .brand .title{font-size:18px}
+    }
+
+    @media (min-width:640px){
+      .wrap{padding-left:24px;padding-right:24px;padding-top:28px}
+      .top{
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+        padding:16px 20px;
+        gap:20px;
+      }
+      .seg{width:auto;flex:0 0 auto}
+      .seg a{flex:0 0 auto;padding:8px 18px;min-height:36px}
+      main{padding:28px 26px}
+      h1{font-size:26px}
+      h2{font-size:17px}
+      section{padding:16px 18px}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      *{transition:none !important}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">P</div>
+        <div class="brand-text">
+          <div class="title">Pomodoro</div>
+          <div class="subtitle">Terms &amp; Legal</div>
+        </div>
+      </div>
+
+      <nav class="seg" aria-label="Site navigation">
+        <a href="/david_app/pomodoro/support">Support</a>
+        <a href="/david_app/pomodoro/privacy">Privacy</a>
+        <a href="/david_app/pomodoro/terms" aria-current="page">Terms</a>
+      </nav>
+    </header>
+
+    <main aria-labelledby="terms-title">
+      <h1 id="terms-title">Terms of Use</h1>
+      <div class="meta">Effective date: November 15, 2026 — Last updated: November 15, 2026</div>
+
+      <section>
+        <h2>1. Agreement and license</h2>
+        <p>These Terms of Use ("Terms") apply to <strong>Pomodoro</strong>, a Pomodoro timer app for iPhone, iPad and Mac ("the app"), developed and published by David, an independent iOS developer ("we", "us").</p>
+        <p>Pomodoro is licensed to you under Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">Licensed Application End User License Agreement (Standard EULA)</a>. These Terms supplement the Standard EULA. By downloading or using the app, you agree to both. If you do not agree, please do not use the app.</p>
+      </section>
+
+      <section>
+        <h2>2. What the app does</h2>
+        <p>Pomodoro is a Pomodoro timer. It runs focus sessions with short breaks and a long break after a set number of focus sessions, can start the next session automatically, lets you organise sessions into categories with colours, tracks a daily goal, shows statistics, plays built-in background sounds, and shows your timer on your Home Screen and Lock Screen, in a Live Activity, and in the Mac menu bar.</p>
+      </section>
+
+      <section>
+        <h2>3. Pomodoro Premium</h2>
+        <p>Pomodoro is free to download. <strong>Pomodoro Premium</strong> unlocks:</p>
+        <ul>
+          <li>full statistics and history,</li>
+          <li>all background sounds,</li>
+          <li>custom session lengths and daily goal.</li>
+        </ul>
+        <p>Premium is available as:</p>
+        <ul>
+          <li><strong>Lifetime:</strong> a one-time purchase of $24.99. It is not a subscription and never renews.</li>
+          <li><strong>Monthly:</strong> an auto-renewable subscription at $2.99 per month, with no free trial.</li>
+          <li><strong>Monthly with free trial:</strong> an auto-renewable subscription at $3.99 per month, starting with a 3-day free trial. The introductory offer is available once per Apple ID.</li>
+        </ul>
+        <p>Prices may vary by country. The App Store shows the final price before you buy.</p>
+      </section>
+
+      <section>
+        <h2>4. Auto-renewable subscription terms</h2>
+        <p>Monthly plans renew automatically at the price shown above unless auto-renew is turned off at least 24 hours before the end of the current period. Manage or cancel anytime in your Apple ID settings. Lifetime is a one-time purchase, not a subscription. Any unused portion of a free trial is forfeited when you buy a subscription.</p>
+        <ul>
+          <li>Payment is charged to your Apple ID account at confirmation of purchase.</li>
+          <li>Your account is charged for renewal within 24 hours before the end of the current period, at the price of the plan you chose.</li>
+          <li>You can manage or cancel your subscription in iOS <em>Settings</em> → your name → <em>Subscriptions</em>. Cancelling stops the next renewal; you keep Premium until the end of the period you already paid for.</li>
+          <li><strong>Free trial:</strong> if you do not cancel at least 24 hours before the trial ends, it converts to a paid monthly subscription at $3.99 per month.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>5. Restoring purchases and refunds</h2>
+        <p>You can restore previous purchases with <em>Restore Purchases</em> in the app, using the same Apple ID you bought with.</p>
+        <p>All payments are processed by Apple. Refund requests are handled by Apple at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer">reportaproblem.apple.com</a>.</p>
+      </section>
+
+      <section>
+        <h2>6. Acceptable use</h2>
+        <p>You agree not to use Pomodoro to:</p>
+        <ul>
+          <li>infringe the intellectual property or privacy rights of others;</li>
+          <li>reverse engineer, tamper with, or attempt to break the security of the app.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>7. Intellectual property</h2>
+        <p>The app, its design and code are owned by the developer or its licensors.</p>
+      </section>
+
+      <section>
+        <h2>8. Disclaimer and limitation of liability</h2>
+        <p>The app is provided "as is" and "as available". To the maximum extent permitted by law, we are not liable for any indirect, incidental or consequential damages, or for loss of data, arising from your use of the app. Nothing in these Terms limits rights you have under consumer law that cannot be limited.</p>
+      </section>
+
+      <section>
+        <h2>9. Privacy</h2>
+        <p>How the app handles information is described in the <a href="/david_app/pomodoro/privacy">Pomodoro Privacy Policy</a>.</p>
+      </section>
+
+      <section>
+        <h2>10. Changes to these Terms</h2>
+        <p>We may update these Terms when the app changes. The new version will be posted on this page with a new effective date. Continued use after changes means you accept the updated Terms.</p>
+      </section>
+
+      <section>
+        <h2>11. Contact</h2>
+        <p>Questions about these Terms or the app:</p>
+        <p><a href="mailto:david.dev.unity@gmail.com?subject=Pomodoro%20—%20Terms">david.dev.unity@gmail.com</a></p>
+      </section>
+    </main>
+
+    <footer>
+      Pomodoro is made by David — Independent iOS Developer. Feedback is always welcome!
+    </footer>
+  </div>
+</body>
+</html>
