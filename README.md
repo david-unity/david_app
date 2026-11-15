@@ -31,7 +31,8 @@ Pages for **Block App** (iPhone) live in `block/`, same layout as Pomodoro:
 | Page | URL | Used by |
 |---|---|---|
 | Support | `/david_app/block/support/` | App Store Connect → Support URL |
-| Privacy Policy | `/david_app/block/privacy/` | App Store Connect → Privacy Policy URL, app paywall |
+| Privacy Policy | `/david_app/block/privacy/` | App Store Connect → Privacy Policy URL, app paywall + Settings |
+| Terms of Use | `/david_app/block/terms/` | App description (Terms of Use link), app paywall + Settings |
 
-There is no Terms of Use page for Block. The terms are Apple's standard EULA:
-https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+The Terms page supplements Apple's Standard EULA (App Store Connect keeps the standard license agreement).
+The app links to these exact URLs (`AppInfo.swift` in the Block repo), so do not rename the folders.
