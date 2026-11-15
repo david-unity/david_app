@@ -23,3 +23,15 @@ Pages for **Pomodoro** (iOS/macOS) live in `pomodoro/`, same layout as QR Plus:
 | Terms of Use | `/david_app/pomodoro/terms/` | App paywall + Settings |
 
 The app links to these exact URLs (`AppConstants.swift` in the Pomodoro repo), so do not rename the folders.
+
+## Block
+
+Pages for **Block App** (iPhone) live in `block/`, same layout as Pomodoro:
+
+| Page | URL | Used by |
+|---|---|---|
+| Support | `/david_app/block/support/` | App Store Connect → Support URL |
+| Privacy Policy | `/david_app/block/privacy/` | App Store Connect → Privacy Policy URL, app paywall |
+
+There is no Terms of Use page for Block. The terms are Apple's standard EULA:
+https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
